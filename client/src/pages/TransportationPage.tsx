@@ -15,7 +15,7 @@ export default function TransportationPage() {
         <div className="container py-4 flex items-center justify-between">
           <Link href="/" className="text-2xl font-bold text-primary">
             System Stabilization
-          </a>
+          </Link>
           <div className="flex gap-6">
             <Link href="/" className="text-foreground hover:text-primary transition">
               Home
