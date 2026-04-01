@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowRight, CheckCircle2, Package, BarChart3 } from "lucide-react";
 import ContactModal from "@/components/ContactModal";
+import { Link } from "wouter";
 
 export default function WarehousePage() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
@@ -12,13 +13,13 @@ export default function WarehousePage() {
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
         <div className="container py-4 flex items-center justify-between">
-          <a href="/" className="text-2xl font-bold text-primary">
+          <Link href="/" className="text-2xl font-bold text-primary">
             System Stabilization
           </a>
           <div className="flex gap-6">
-            <a href="/" className="text-foreground hover:text-primary transition">
+            <Link href="/" className="text-foreground hover:text-primary transition">
               Home
-            </a>
+            </Link>
             <a href="#contact" className="text-foreground hover:text-primary transition">
               Contact
             </a>

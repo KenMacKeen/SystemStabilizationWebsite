@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowRight, CheckCircle2, Phone, Mail } from "lucide-react";
 import ContactModal from "@/components/ContactModal";
-import ContactForm from "@/components/ContactForm";
 import { useAnalytics } from "@/hooks/useAnalytics";
+import { Link } from "wouter";
 
 export default function Home() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
@@ -32,9 +32,15 @@ export default function Home() {
             <a href="#services" className="text-foreground hover:text-primary transition">
               Services
             </a>
-            <a href="#pricing" className="text-foreground hover:text-primary transition">
-              Pricing
-            </a>
+            <Link href="/retail" className="text-foreground hover:text-primary transition">
+              Retail
+            </Link>
+            <Link href="/warehouse" className="text-foreground hover:text-primary transition">
+              Warehouse
+            </Link>
+            <Link href="/transportation" className="text-foreground hover:text-primary transition">
+              Transportation
+            </Link>
             <a href="#contact" className="text-foreground hover:text-primary transition">
               Contact
             </a>
