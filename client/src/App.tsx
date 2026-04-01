@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { Router as WouterRouter, Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
@@ -9,18 +9,22 @@ import RetailPage from "./pages/RetailPage";
 import WarehousePage from "./pages/WarehousePage";
 import TransportationPage from "./pages/TransportationPage";
 
+// Strip trailing slash so wouter base matches correctly
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 function Router() {
   return (
-    <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/retail"} component={RetailPage} />
-      <Route path={"/warehouse"} component={WarehousePage} />
-      <Route path={"/transportation"} component={TransportationPage} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
-      <Route component={NotFound} />
-    </Switch>
+    <WouterRouter base={base}>
+      <Switch>
+        <Route path={"/"} component={Home} />
+        <Route path={"/retail"} component={RetailPage} />
+        <Route path={"/warehouse"} component={WarehousePage} />
+        <Route path={"/transportation"} component={TransportationPage} />
+        <Route path={"/404"} component={NotFound} />
+        {/* Final fallback route */}
+        <Route component={NotFound} />
+      </Switch>
+    </WouterRouter>
   );
 }
 
