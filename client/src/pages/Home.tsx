@@ -24,11 +24,11 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
-        <div className="container py-4 flex items-center justify-between">
+        <div className="container py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
           <div className="text-2xl font-bold text-primary">
             Breakwater Technologies
           </div>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
             <a href="#services" className="text-foreground hover:text-primary transition">
               Services
             </a>
