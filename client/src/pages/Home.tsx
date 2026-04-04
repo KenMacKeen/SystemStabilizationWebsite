@@ -26,7 +26,7 @@ export default function Home() {
       <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
         <div className="container py-4 flex items-center justify-between">
           <div className="text-2xl font-bold text-primary">
-            System Stabilization
+            Breakwater Technologies
           </div>
           <div className="flex gap-6">
             <a href="#services" className="text-foreground hover:text-primary transition">
