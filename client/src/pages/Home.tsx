@@ -58,7 +58,7 @@ export default function Home() {
             backgroundPosition: 'center',
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/40 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/75 to-background/20 z-10" />
 
         <div className="container relative z-20 py-24 md:py-32 lg:py-40">
           <div className="max-w-2xl">
@@ -280,7 +280,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section id="contact" className="py-16 md:py-24 bg-gradient-to-br from-primary/10 to-primary/5">
+      <section id="contact" className="py-16 md:py-24 bg-gradient-to-br from-primary/15 via-background to-secondary">
         <div className="container">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-foreground mb-6">Ready to Stabilize Your Systems?</h2>
