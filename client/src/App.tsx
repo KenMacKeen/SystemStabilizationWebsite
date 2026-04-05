@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import RetailPage from "./pages/RetailPage";
 import WarehousePage from "./pages/WarehousePage";
 import TransportationPage from "./pages/TransportationPage";
+import BlogPage from "./pages/BlogPage";
 
 // Strip trailing slash so wouter base matches correctly
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
@@ -20,6 +21,7 @@ function Router() {
         <Route path={"/retail"} component={RetailPage} />
         <Route path={"/warehouse"} component={WarehousePage} />
         <Route path={"/transportation"} component={TransportationPage} />
+        <Route path={"/blog"} component={BlogPage} />
         <Route path={"/404"} component={NotFound} />
         {/* Final fallback route */}
         <Route component={NotFound} />

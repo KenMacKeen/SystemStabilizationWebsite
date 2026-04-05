@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowRight, CheckCircle2, Phone, Mail } from "lucide-react";
 import ContactModal from "@/components/ContactModal";
+import TestimonialsCarousel from "@/components/TestimonialsCarousel";
+import LiveChat from "@/components/LiveChat";
 import { useAnalytics } from "@/hooks/useAnalytics";
 import { Link } from "wouter";
 
@@ -40,6 +42,9 @@ export default function Home() {
             </Link>
             <Link href="/transportation" className="text-foreground hover:text-primary transition">
               Transportation
+            </Link>
+            <Link href="/blog" className="text-foreground hover:text-primary transition">
+              Blog
             </Link>
             <a href="#contact" className="text-foreground hover:text-primary transition">
               Contact
@@ -279,6 +284,59 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Testimonials */}
+      <TestimonialsCarousel />
+
+      {/* Blog / Resources Hub */}
+      <section className="py-16 md:py-24">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="text-foreground mb-4">Resources & Insights</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Practical guides to keep your systems stable and your team informed.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6 mb-10">
+            {[
+              {
+                tag: "Excel",
+                title: "5 Ways to Prevent Excel File Corruption",
+                excerpt: "Learn the top triggers and how to harden your mission-critical spreadsheets.",
+                date: "Mar 28, 2026",
+              },
+              {
+                tag: "Access",
+                title: "Why Your Access Database Is Slowing Down",
+                excerpt: "Bloated tables and unindexed queries are the hidden culprits. Here's the checklist.",
+                date: "Mar 14, 2026",
+              },
+              {
+                tag: "POS Systems",
+                title: "The 10-Point POS Integration Health Checklist",
+                excerpt: "Run through this before your next busy season to catch issues early.",
+                date: "Feb 27, 2026",
+              },
+            ].map((post, idx) => (
+              <div key={idx} className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 hover:shadow-lg transition group">
+                <span className="inline-block text-xs font-semibold text-primary bg-primary/10 px-2 py-1 rounded mb-4">
+                  {post.tag}
+                </span>
+                <h3 className="text-foreground text-lg font-bold mb-2 group-hover:text-primary transition leading-snug">
+                  {post.title}
+                </h3>
+                <p className="text-muted-foreground text-sm mb-4">{post.excerpt}</p>
+                <span className="text-xs text-muted-foreground">{post.date}</span>
+              </div>
+            ))}
+          </div>
+          <div className="text-center">
+            <Link href="/blog" className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-semibold transition">
+              View all articles <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section id="contact" className="py-16 md:py-24 bg-gradient-to-br from-primary/15 via-background to-secondary">
         <div className="container">
@@ -344,6 +402,9 @@ export default function Home() {
         isOpen={isContactModalOpen}
         onOpenChange={setIsContactModalOpen}
       />
+
+      {/* Live Chat */}
+      <LiveChat />
     </div>
   );
 }
