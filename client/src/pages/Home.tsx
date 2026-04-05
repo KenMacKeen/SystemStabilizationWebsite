@@ -46,6 +46,9 @@ export default function Home() {
             <Link href="/blog" className="text-foreground hover:text-primary transition">
               Blog
             </Link>
+            <Link href="/faq" className="text-foreground hover:text-primary transition">
+              FAQ
+            </Link>
             <a href="#contact" className="text-foreground hover:text-primary transition">
               Contact
             </a>
