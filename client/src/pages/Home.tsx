@@ -70,24 +70,32 @@ export default function Home() {
 
         <div className="container relative z-20 py-24 md:py-32 lg:py-40">
           <div className="max-w-2xl">
+            <div className="inline-block text-xs font-semibold text-primary bg-primary/10 border border-primary/20 px-3 py-1 rounded-full mb-6 tracking-wide uppercase">
+              Retail & Distribution Specialists
+            </div>
             <h1 className="text-foreground mb-6">
-              Stop System Failures.<br />
-              <span className="text-primary">Start Thriving.</span>
+              Finally, Someone Who Actually Fixes the Systems<br />
+              <span className="text-primary">Your Business Runs On.</span>
             </h1>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Your legacy Excel and Access files are mission-critical. When they break, your business stops. We specialize in rapid diagnosis and stabilization of the systems small retail and distribution businesses depend on.
+              No tickets. No IT runaround. Just a specialist who shows up, diagnoses the problem fast, and gets you back to running your business — usually within 24 hours.
             </p>
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-4 mb-8">
               <Button
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground"
                 onClick={handleGetStartedClick}
               >
-                Get Started <ArrowRight className="ml-2 h-4 w-4" />
+                Claim Your Free Consultation <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Button size="lg" variant="outline">
-                Learn More
+                See How It Works
               </Button>
+            </div>
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
+              <span className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-primary" /> No obligation</span>
+              <span className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-primary" /> Fixed-fee pricing</span>
+              <span className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-primary" /> 24-hr diagnosis guarantee</span>
             </div>
           </div>
         </div>
@@ -97,31 +105,56 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-secondary/30">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-foreground mb-4">The Problem You're Facing</h2>
+            <h2 className="text-foreground mb-4">Every Hour Your System Is Down Costs You</h2>
             <p className="text-lg text-muted-foreground">
-              Your systems are breaking down. Your team is frustrated. Your business is losing money. And you don't know who to call.
+              Lost sales. Wasted labor. A team that's frustrated and workarounding problems they shouldn't have to. And the longer you wait, the worse it gets.
             </p>
+            <p className="text-lg text-muted-foreground mt-3 font-medium text-foreground">Sound familiar?</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                title: "Excel Files Crashing",
-                description: "Mission-critical spreadsheets corrupted, slow, or completely broken—costing you hours and accuracy."
+                title: "\"My Excel file won't open.\"",
+                description: "It's the only copy of your inventory. Your team is standing around waiting. And you have no idea who to call."
               },
               {
-                title: "POS System Failures",
-                description: "Integration issues, intermittent glitches, and data sync problems that halt your sales."
+                title: "\"The POS hasn't synced in three days.\"",
+                description: "Sales are still happening but the data is a mess. You're reconciling by hand and the gap is growing."
               },
               {
-                title: "Access Database Issues",
-                description: "Legacy databases running slow, crashing daily, or showing duplicate/corrupted data."
+                title: "\"We just work around the database errors.\"",
+                description: "Your Access database throws errors daily. Nobody knows why. Everyone's just learned to live with it — until they can't."
               }
             ].map((item, idx) => (
-              <Card key={idx} className="p-6 border-border">
-                <h3 className="text-foreground font-semibold mb-3">{item.title}</h3>
+              <Card key={idx} className="p-6 border-border border-l-2 border-l-primary/50">
+                <h3 className="text-foreground font-semibold mb-3 text-lg">{item.title}</h3>
                 <p className="text-muted-foreground">{item.description}</p>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Guarantee Banner */}
+      <section className="py-12 bg-primary/10 border-y border-primary/20">
+        <div className="container">
+          <div className="max-w-3xl mx-auto flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
+            <div className="flex-shrink-0 h-16 w-16 rounded-full bg-primary/20 flex items-center justify-center">
+              <CheckCircle2 className="h-8 w-8 text-primary" />
+            </div>
+            <div>
+              <h3 className="text-foreground text-xl font-bold mb-1">The 24-Hour Stability Guarantee</h3>
+              <p className="text-muted-foreground">
+                We'll diagnose your most urgent system issue within 24 hours of kickoff — <span className="text-foreground font-medium">or the Sprint is free.</span> No fine print. No exceptions.
+              </p>
+            </div>
+            <Button
+              className="flex-shrink-0 bg-primary hover:bg-primary/90 text-primary-foreground"
+              size="lg"
+              onClick={handleGetStartedClick}
+            >
+              Hold Us To It <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
           </div>
         </div>
       </section>
@@ -344,9 +377,12 @@ export default function Home() {
       <section id="contact" className="py-16 md:py-24 bg-gradient-to-br from-primary/15 via-background to-secondary">
         <div className="container">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-foreground mb-6">Ready to Stabilize Your Systems?</h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Let's start with a quick conversation about your most urgent system challenge. No obligation, no pressure—just expert guidance.
+            <h2 className="text-foreground mb-6">Stop Losing Money to Broken Systems.</h2>
+            <p className="text-lg text-muted-foreground mb-3">
+              Get a free 30-minute consultation. We'll listen to what's wrong, tell you exactly what we'd do to fix it, and give you a flat-fee quote — no pitch, no pressure.
+            </p>
+            <p className="text-sm text-primary font-semibold mb-8">
+              + Backed by our 24-Hour Stability Guarantee — diagnose it in 24 hrs or the Sprint is free.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
